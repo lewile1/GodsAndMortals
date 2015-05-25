@@ -13,13 +13,14 @@ public class ItemAresSword extends ItemSword{
 	
 	public ItemAresSword(ToolMaterial p_i45356_1_) {
 		super(BRIMSTONE);
+		this.setUnlocalizedName("aresSword");
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
 	public boolean hitEntity(ItemStack item, EntityLivingBase targ1, EntityLivingBase targ2){
 		item.damageItem(2, targ2);
-		targ2.setFire(100);
+		targ1.setFire(100);
 		return true;
 	}
 	

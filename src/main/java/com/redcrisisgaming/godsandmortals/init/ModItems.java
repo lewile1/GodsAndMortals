@@ -3,6 +3,7 @@ package com.redcrisisgaming.godsandmortals.init;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSword;
 
+import com.redcrisisgaming.godsandmortals.item.ItemAresSword;
 import com.redcrisisgaming.godsandmortals.item.ItemChisel;
 import com.redcrisisgaming.godsandmortals.item.ItemDustGodEssence;
 import com.redcrisisgaming.godsandmortals.item.ItemFavoredStick;
@@ -21,13 +22,13 @@ public class ModItems {
 	public static final ItemGAM dustGodEssence = new ItemDustGodEssence();
 	public static final ItemGAM favoredStick = new ItemFavoredStick();
 	public static final ItemGAM ingotGodium = new ItemGodiumIngot();
-	public static final ItemSword lewsSword = new ItemSwordGAM(ToolMaterial.EMERALD);
+	public static final ItemSword aresSword = new ItemAresSword(ToolMaterial.EMERALD);
 	
 	public static void init(){
 		GameRegistry.registerItem(chisel, "chisel");
 		GameRegistry.registerItem(dustGodEssence, "dustGodEssence");
 		GameRegistry.registerItem(favoredStick, "favoredStick");
-		GameRegistry.registerItem(lewsSword, "lewsSword");
+		GameRegistry.registerItem(aresSword, "aresSword");
 		GameRegistry.registerItem(ingotGodium, "ingotGodium");
 	}
 }
