@@ -3,6 +3,7 @@ package com.redcrisisgaming.godsandmortals.item;
 import java.util.Set;
 
 import com.redcrisisgaming.godsandmortals.creativetab.CreativeTabGAM;
+import com.redcrisisgaming.godsandmortals.reference.Materials;
 import com.redcrisisgaming.godsandmortals.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -17,15 +18,13 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class ItemSwordGAM extends ItemTool{
 
-	public static ToolMaterial GODIUM = EnumHelper.addToolMaterial("Godium", 3, 1561, 8.0F, 22.0F, 22);
-	public static ToolMaterial ZEUSIUM = EnumHelper.addToolMaterial("Zeusium", 3, 1561, 8.0F, 22.0F, 22);
 	private static float damageVsEntity;
 	private static Set field_150914_c;
 	public static final CreativeTabs GAM_TAB = new CreativeTabGAM(Reference.MOD_ID.toLowerCase()+ ":items");
 	
 	
 	public ItemSwordGAM(ToolMaterial material) {
-		super(22.0F, GODIUM, field_150914_c);
+		super(22.0F, Materials.GODIUM, field_150914_c);
 		this.setCreativeTab(this.GAM_TAB);
 	}
 	

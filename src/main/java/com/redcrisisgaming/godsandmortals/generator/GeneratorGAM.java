@@ -42,7 +42,7 @@ public class GeneratorGAM implements IWorldGenerator{
 			int oreBlockYCoord = random.nextInt(12) + 12;
 			int oreBlockZCoord = j + random.nextInt(16);
 			
-			(new WorldGenMinable(ModBlocks.oreGodEssence, 3)).generate(world, random, oreBlockXCoord, oreBlockYCoord, oreBlockZCoord);
+			(new WorldGenMinable(ModBlocks.oreGodEssence, 8)).generate(world, random, oreBlockXCoord, oreBlockYCoord, oreBlockZCoord);
 		}
 	}
 	

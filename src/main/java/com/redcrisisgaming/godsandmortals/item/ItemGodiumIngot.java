@@ -2,7 +2,7 @@ package com.redcrisisgaming.godsandmortals.item;
 
 public class ItemGodiumIngot extends ItemGAM{
 	public ItemGodiumIngot(){
-		super();
+		super("other");
 		this.setUnlocalizedName("ingotGodium");
 	}
 }

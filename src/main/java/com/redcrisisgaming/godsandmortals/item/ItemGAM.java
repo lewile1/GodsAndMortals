@@ -3,6 +3,7 @@ package com.redcrisisgaming.godsandmortals.item;
 import com.google.common.collect.Multimap;
 import com.redcrisisgaming.godsandmortals.creativetab.CreativeTabGAM;
 import com.redcrisisgaming.godsandmortals.reference.Reference;
+import com.redcrisisgaming.godsandmortals.util.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,30 +25,80 @@ public class ItemGAM extends Item{
 	
 	private float attackDamage;
 	protected float efficiencyOnProperMaterial = 4.0F;
-	protected final Item.ToolMaterial toolMaterial = Item.ToolMaterial.WOOD;
+	protected Item.ToolMaterial toolMaterial = Item.ToolMaterial.WOOD;
+	private EnumAction toolAction = null;
+	private static String itemType = "other";
 	
 	public static final CreativeTabs GAM_TAB = new CreativeTabGAM(Reference.MOD_ID.toLowerCase()+ ":items");
 	
-	
-	public ItemGAM(){
+	public ItemGAM(String toolType){
 		super();
 		this.setMaxStackSize(1);
-		this.setMaxDamage(toolMaterial.getMaxUses());
 		this.setCreativeTab(this.GAM_TAB);
-		this.attackDamage = 4.0F + toolMaterial.getDamageVsEntity();
+		itemType = toolType;
+		switch(toolType){
+			case "itemSword":
+				this.setMaxDamage(toolMaterial.getMaxUses());
+				this.attackDamage = 4.0F + toolMaterial.getDamageVsEntity();
+				this.toolAction = EnumAction.block;
+				break;
+			case "itemHoe":
+				break;
+			case "itemSpade":
+				break;
+			case "itemPick":
+				break;
+			default:
+				break;
+		}
 	}
 	
-    public float attackBlocks(ItemStack itemUsed, Block blockTarget)
+	
+	public ItemGAM(String toolType, ToolMaterial material){
+		super();
+		toolMaterial = material;
+		this.setMaxStackSize(1);
+		this.setCreativeTab(this.GAM_TAB);
+		itemType = toolType;
+		switch(toolType){
+		case "itemSword":
+			this.setMaxDamage(toolMaterial.getMaxUses());
+			this.attackDamage = 4.0F + toolMaterial.getDamageVsEntity();
+			this.toolAction = EnumAction.block;
+			break;
+		case "itemHoe":
+			break;
+		case "itemSpade":
+			break;
+		case "itemPick":
+			break;
+		default:
+			this.toolAction = EnumAction.bow;
+			break;
+		}
+		
+	}
+	
+	////////////////////// START COPIED CODE
+	
+	@Override
+    public float func_150893_a(ItemStack itemUsed, Block blockTarget)
     {
-        if (blockTarget == Blocks.web)
-        {
-            return 15.0F;
-        }
-        else
-        {
-            Material material = blockTarget.getMaterial();
-            return material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd ? 1.0F : 1.5F;
-        }
+		if (itemType =="itemSword") {
+			LogHelper.info(itemUsed.getDisplayName().toString());
+			LogHelper.info(itemType.toString());
+			if (blockTarget == Blocks.web)
+			{
+				return 15.0F;
+			}
+			else
+			{
+				Material material = blockTarget.getMaterial();
+				return material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd ? 1.0F : 1.5F;
+			}
+		} else {
+			return 1.0F;
+		}
     }
     
     public boolean hitEntity(ItemStack item, EntityLivingBase target1, EntityLivingBase target2)
@@ -67,7 +118,8 @@ public class ItemGAM extends Item{
     }
 
     
-    /* Returns True is the item is renderer in full 3D when hold.
+    /** 
+     * Returns True is the item is renderer in full 3D when hold.
     */
    @SideOnly(Side.CLIENT)
    public boolean isFull3D()
@@ -80,7 +132,7 @@ public class ItemGAM extends Item{
     */
    public EnumAction getItemUseAction(ItemStack p_77661_1_)
    {
-       return EnumAction.block;
+       return toolAction;
    }
 
    /**
@@ -141,7 +193,7 @@ public class ItemGAM extends Item{
         return multimap;
    }
     
-    
+    /////////////////////////// END COPIED CODE
     
     
 	@Override

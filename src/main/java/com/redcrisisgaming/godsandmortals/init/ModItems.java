@@ -22,7 +22,7 @@ public class ModItems {
 	public static final ItemGAM dustGodEssence = new ItemDustGodEssence();
 	public static final ItemGAM favoredStick = new ItemFavoredStick();
 	public static final ItemGAM ingotGodium = new ItemGodiumIngot();
-	public static final ItemSword aresSword = new ItemAresSword(ToolMaterial.EMERALD);
+	public static final ItemGAM aresSword = new ItemAresSword();
 	
 	public static void init(){
 		GameRegistry.registerItem(chisel, "chisel");

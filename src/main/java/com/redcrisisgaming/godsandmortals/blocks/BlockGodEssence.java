@@ -10,6 +10,7 @@ public class BlockGodEssence extends BlockGAM{
 	public BlockGodEssence(){
 		super();
 		this.setBlockName("oreGodEssence");
+		this.setLightLevel(0.9F);
 	}
 	
 	// Using the methods from the Minecraft Redstone ore block
