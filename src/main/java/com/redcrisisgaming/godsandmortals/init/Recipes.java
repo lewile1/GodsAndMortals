@@ -9,6 +9,8 @@ public class Recipes {
 	public static void init(){
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.statueBlock), "DSD", "SDS", "DSD", 'S', new ItemStack(ModItems.dustGodEssence), 'D', new ItemStack(Blocks.cobblestone));
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.chisel), "   ", " I ", "  S", 'I', new ItemStack(Items.iron_ingot), 'S', new ItemStack(ModItems.favoredStick));
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.favoredStick), "   ", "SDS", "SDS", 'S', new ItemStack(ModItems.dustGodEssence), 'D', new ItemStack(Items.stick)); 
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.favoredStick), "   ", "SDS", "SDS", 'S', new ItemStack(ModItems.dustGodEssence), 'D', new ItemStack(Items.stick));
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ingotGodium), "DDD", "DID", "DDD", 'D', new ItemStack(ModItems.dustGodEssence), 'I', new ItemStack(Items.iron_ingot));
+		
 	}
 }
