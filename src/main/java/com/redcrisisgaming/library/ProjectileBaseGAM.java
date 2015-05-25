@@ -1,12 +1,20 @@
 package com.redcrisisgaming.library;
 
 import cpw.mods.fml.common.registry.IEntityAdditionalSpawnData;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ProjectileBaseGAM extends EntityArrow implements IEntityAdditionalSpawnData{
+public abstract class ProjectileBaseGAM extends EntityArrow implements IEntityAdditionalSpawnData{
+	
+	public ItemStack returnStack;
+	
+	public boolean bounceOnNoDamage = true;
+	public boolean defused = false;
+	
 	public ProjectileBaseGAM (World world){
 		super(world);
 	}
@@ -34,5 +42,18 @@ public class ProjectileBaseGAM extends EntityArrow implements IEntityAdditionalS
         this.setThrowableHeading(this.motionX, this.motionY, this.motionZ, speed, accuracy);
         
         returnStack = stack;
+        
+	}
+	
+	public ItemStack getEntityItem(){
+		return returnStack;
+	}
+	
+	protected double getStuckDepth(){ return 0.5f; }
+	
+	protected void doLivingHit(EntityLivingBase entityHit){
+		if(!this.worldObj.isRemote){
+			entityHit.setArrowCountInEntity(entityHit.getArrowCountInEntity() + 1);
+		}
 	}
 }
