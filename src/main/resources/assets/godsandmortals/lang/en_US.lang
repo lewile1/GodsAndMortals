@@ -4,3 +4,6 @@ item.godsandmortals:favoredStick.name=Favored One's Stick
 
 tile.godsandmortals:oreGodEssence.name=God Essence Ore
 tile.godsandmortals:statueBlock.name=Favored One's Block
+
+itemgroup.godsandmortals:item=Gods And Mortals Items
+itemgroup.godsandmortals:blocks=Gods And Mortals Blocks
