@@ -9,7 +9,6 @@ import com.redcrisisgaming.godsandmortals.item.ItemDustGodEssence;
 import com.redcrisisgaming.godsandmortals.item.ItemFavoredStick;
 import com.redcrisisgaming.godsandmortals.item.ItemGAM;
 import com.redcrisisgaming.godsandmortals.item.ItemGodiumIngot;
-import com.redcrisisgaming.godsandmortals.item.ItemSwordGAM;
 import com.redcrisisgaming.godsandmortals.reference.Reference;
 
 import cpw.mods.fml.common.registry.GameRegistry;

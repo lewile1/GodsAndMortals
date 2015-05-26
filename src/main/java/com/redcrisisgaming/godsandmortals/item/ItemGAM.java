@@ -25,9 +25,9 @@ public class ItemGAM extends Item{
 	
 	private float attackDamage;
 	protected float efficiencyOnProperMaterial = 4.0F;
-	protected Item.ToolMaterial toolMaterial = Item.ToolMaterial.WOOD;
 	private EnumAction toolAction = null;
-	private static String itemType = "other";
+	private ToolMaterial toolMaterial = Item.ToolMaterial.WOOD;
+	protected static String itemType = "other";
 	
 	public static final CreativeTabs GAM_TAB = new CreativeTabGAM(Reference.MOD_ID.toLowerCase()+ ":items");
 	
@@ -35,35 +35,24 @@ public class ItemGAM extends Item{
 		super();
 		this.setMaxStackSize(1);
 		this.setCreativeTab(this.GAM_TAB);
-		itemType = toolType;
-		switch(toolType){
-			case "itemSword":
-				this.setMaxDamage(toolMaterial.getMaxUses());
-				this.attackDamage = 4.0F + toolMaterial.getDamageVsEntity();
-				this.toolAction = EnumAction.block;
-				break;
-			case "itemHoe":
-				break;
-			case "itemSpade":
-				break;
-			case "itemPick":
-				break;
-			default:
-				break;
-		}
+		setItemProps(toolType, Item.ToolMaterial.WOOD);
 	}
 	
 	
 	public ItemGAM(String toolType, ToolMaterial material){
 		super();
-		toolMaterial = material;
 		this.setMaxStackSize(1);
 		this.setCreativeTab(this.GAM_TAB);
+		setItemProps(toolType, material);
+	}
+	
+	private void setItemProps(String toolType, ToolMaterial material){
+		toolMaterial = material;
 		itemType = toolType;
 		switch(toolType){
 		case "itemSword":
-			this.setMaxDamage(toolMaterial.getMaxUses());
-			this.attackDamage = 4.0F + toolMaterial.getDamageVsEntity();
+			this.setMaxDamage(material.getMaxUses());
+			this.attackDamage = 4.0F + material.getDamageVsEntity();
 			this.toolAction = EnumAction.block;
 			break;
 		case "itemHoe":
@@ -76,30 +65,9 @@ public class ItemGAM extends Item{
 			this.toolAction = EnumAction.bow;
 			break;
 		}
-		
 	}
 	
 	////////////////////// START COPIED CODE
-	
-	@Override
-    public float func_150893_a(ItemStack itemUsed, Block blockTarget)
-    {
-		if (itemType =="itemSword") {
-			LogHelper.info(itemUsed.getDisplayName().toString());
-			LogHelper.info(itemType.toString());
-			if (blockTarget == Blocks.web)
-			{
-				return 15.0F;
-			}
-			else
-			{
-				Material material = blockTarget.getMaterial();
-				return material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd ? 1.0F : 1.5F;
-			}
-		} else {
-			return 1.0F;
-		}
-    }
     
     public boolean hitEntity(ItemStack item, EntityLivingBase target1, EntityLivingBase target2)
     {

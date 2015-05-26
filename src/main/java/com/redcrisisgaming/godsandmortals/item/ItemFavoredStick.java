@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 public class ItemFavoredStick extends ItemGAM{
 	public ItemFavoredStick(){
 		super("other");
+		this.itemType = "other";
 		this.setUnlocalizedName("favoredStick");
 	}
 	
