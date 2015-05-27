@@ -20,6 +20,12 @@ public class ProjectileBaseGAM extends EntityArrow implements IEntityAdditionalS
 	
 	public boolean bounceOnNoDamage = true;
 	public boolean defused = false;
+
+	private int field_145791_d;
+	private int field_145792_e;
+	private int field_145789_f;
+
+	private boolean inGround;
 	
 	public ProjectileBaseGAM (World world){
 		super(world);
@@ -91,7 +97,7 @@ public class ProjectileBaseGAM extends EntityArrow implements IEntityAdditionalS
 
             // we are stuck in a block. yay.
             if (axisalignedbb != null && axisalignedbb.isVecInside(Vec3.createVectorHelper(this.posX, this.posY, this.posZ)))
-                this.onGround = true;
+                this.inGround = true;
         }
 
         if (this.inGround)
