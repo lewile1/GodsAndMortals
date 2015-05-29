@@ -1,4 +1,4 @@
-package com.redcrisisgaming.godsandmortals.item;
+package com.redcrisisgaming.godsandmortals.items;
 
 import com.google.common.collect.Multimap;
 import com.redcrisisgaming.godsandmortals.creativetab.CreativeTabGAM;

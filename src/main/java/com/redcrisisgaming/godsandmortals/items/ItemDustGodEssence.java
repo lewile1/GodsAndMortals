@@ -1,4 +1,4 @@
-package com.redcrisisgaming.godsandmortals.item;
+package com.redcrisisgaming.godsandmortals.items;
 
 public class ItemDustGodEssence extends ItemGAM{
 	public ItemDustGodEssence(){

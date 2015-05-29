@@ -3,12 +3,14 @@ package com.redcrisisgaming.godsandmortals.init;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSword;
 
-import com.redcrisisgaming.godsandmortals.item.ItemAresSword;
-import com.redcrisisgaming.godsandmortals.item.ItemChisel;
-import com.redcrisisgaming.godsandmortals.item.ItemDustGodEssence;
-import com.redcrisisgaming.godsandmortals.item.ItemFavoredStick;
-import com.redcrisisgaming.godsandmortals.item.ItemGAM;
-import com.redcrisisgaming.godsandmortals.item.ItemGodiumIngot;
+import com.redcrisisgaming.godsandmortals.items.ItemAresSword;
+import com.redcrisisgaming.godsandmortals.items.ItemChisel;
+import com.redcrisisgaming.godsandmortals.items.ItemDustGodEssence;
+import com.redcrisisgaming.godsandmortals.items.ItemFavoredStick;
+import com.redcrisisgaming.godsandmortals.items.ItemGAM;
+import com.redcrisisgaming.godsandmortals.items.ItemGodiumIngot;
+import com.redcrisisgaming.godsandmortals.items.armor.ItemArmorGAM;
+import com.redcrisisgaming.godsandmortals.reference.Materials;
 import com.redcrisisgaming.godsandmortals.reference.Reference;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -22,6 +24,7 @@ public class ModItems {
 	public static final ItemGAM favoredStick = new ItemFavoredStick();
 	public static final ItemGAM ingotGodium = new ItemGodiumIngot();
 	public static final ItemGAM aresSword = new ItemAresSword();
+	public static final ItemArmorGAM brimstoneHelm = new ItemArmorGAM("brimstone_helmet", Materials.BRIMSTONE_ARMOR, "brimstoneArmor", 0);
 	
 	public static void init(){
 		GameRegistry.registerItem(chisel, "chisel");
@@ -29,5 +32,7 @@ public class ModItems {
 		GameRegistry.registerItem(favoredStick, "favoredStick");
 		GameRegistry.registerItem(aresSword, "aresSword");
 		GameRegistry.registerItem(ingotGodium, "ingotGodium");
+		
+		GameRegistry.registerItem(brimstoneHelm, "brimstone_helmet");
 	}
 }

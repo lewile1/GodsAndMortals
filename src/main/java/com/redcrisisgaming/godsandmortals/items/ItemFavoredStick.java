@@ -1,4 +1,4 @@
-package com.redcrisisgaming.godsandmortals.item;
+package com.redcrisisgaming.godsandmortals.items;
 
 import com.redcrisisgaming.godsandmortals.util.LogHelper;
 
