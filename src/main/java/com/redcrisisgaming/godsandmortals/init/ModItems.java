@@ -4,6 +4,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSword;
 
 import com.redcrisisgaming.godsandmortals.items.ItemAresSword;
+import com.redcrisisgaming.godsandmortals.items.ItemBrimstoneBrick;
 import com.redcrisisgaming.godsandmortals.items.ItemChisel;
 import com.redcrisisgaming.godsandmortals.items.ItemDustGodEssence;
 import com.redcrisisgaming.godsandmortals.items.ItemFavoredStick;
@@ -26,6 +27,7 @@ public class ModItems {
 	public static final ItemGAM ingotGodium = new ItemGodiumIngot();
 	public static final ItemGAM aresSword = new ItemAresSword();
 	public static final ItemArmorGAM godiumHelm = new ItemGodiumHelm();
+	public static final ItemGAM brickBrimstone = new ItemBrimstoneBrick();
 	
 	public static void init(){
 		GameRegistry.registerItem(chisel, "chisel");
@@ -33,6 +35,7 @@ public class ModItems {
 		GameRegistry.registerItem(favoredStick, "favoredStick");
 		GameRegistry.registerItem(aresSword, "aresSword");
 		GameRegistry.registerItem(ingotGodium, "ingotGodium");
+		GameRegistry.registerItem(brickBrimstone, "brickBrimstone");
 		
 		GameRegistry.registerItem(godiumHelm, "godiumHelm");
 	}

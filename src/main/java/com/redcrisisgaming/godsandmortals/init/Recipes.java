@@ -15,6 +15,6 @@ public class Recipes {
 		
 		
 		// Smelting Recipes
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.bumstoneBlock, 1, 1),  new ItemStack(ModItems.ingotGodium, 1, 11), 0.5F);
+		GameRegistry.addSmelting(ModBlocks.bumstoneBlock,  new ItemStack(ModItems.brickBrimstone, 1, 11), 0.5F);
 	}
 }
