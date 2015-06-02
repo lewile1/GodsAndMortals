@@ -10,6 +10,7 @@ import com.redcrisisgaming.godsandmortals.items.ItemFavoredStick;
 import com.redcrisisgaming.godsandmortals.items.ItemGAM;
 import com.redcrisisgaming.godsandmortals.items.ItemGodiumIngot;
 import com.redcrisisgaming.godsandmortals.items.armor.ItemArmorGAM;
+import com.redcrisisgaming.godsandmortals.items.armor.ItemGodiumHelm;
 import com.redcrisisgaming.godsandmortals.reference.Materials;
 import com.redcrisisgaming.godsandmortals.reference.Reference;
 
@@ -24,7 +25,7 @@ public class ModItems {
 	public static final ItemGAM favoredStick = new ItemFavoredStick();
 	public static final ItemGAM ingotGodium = new ItemGodiumIngot();
 	public static final ItemGAM aresSword = new ItemAresSword();
-	public static final ItemArmorGAM brimstoneHelm = new ItemArmorGAM("brimstone_helmet", Materials.BRIMSTONE_ARMOR, "brimstoneArmor", 0);
+	public static final ItemArmorGAM godiumHelm = new ItemGodiumHelm();
 	
 	public static void init(){
 		GameRegistry.registerItem(chisel, "chisel");
@@ -33,6 +34,6 @@ public class ModItems {
 		GameRegistry.registerItem(aresSword, "aresSword");
 		GameRegistry.registerItem(ingotGodium, "ingotGodium");
 		
-		GameRegistry.registerItem(brimstoneHelm, "brimstone_helmet");
+		GameRegistry.registerItem(godiumHelm, "godiumHelm");
 	}
 }

@@ -7,7 +7,9 @@ package com.redcrisisgaming.godsandmortals.generator;
 import java.util.Random;
 
 import com.redcrisisgaming.godsandmortals.init.ModBlocks;
+import com.redcrisisgaming.godsandmortals.util.LogHelper;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -34,6 +36,13 @@ public class GeneratorGAM implements IWorldGenerator{
 	
 	private void generateNether(World world, Random random, int i, int j){
 		
+		for(int k = 0; k < 32; k++){
+			int oreBlockXCoord = i + random.nextInt(16);
+			int oreBlockYCoord = random.nextInt(128);
+			int oreBlockZCoord = j + random.nextInt(16);
+			
+			(new WorldGenMinable(ModBlocks.bumstoneBlock, 1, 5, Blocks.netherrack)).generate(world, random, oreBlockXCoord, oreBlockYCoord, oreBlockZCoord);
+		}
 	}
 
 	private void generateSurface(World world, Random random, int i, int j){

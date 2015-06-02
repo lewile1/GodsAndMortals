@@ -11,8 +11,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import net.minecraft.block.ITileEntityProvider;
 
-public class BlockGAM extends Block{
+public class BlockGAM extends Block implements ITileEntityProvider{
 
 	public static final CreativeTabs GAM_TAB = new CreativeTabGAM(Reference.MOD_ID.toLowerCase()+ ":blocks", ModItems.chisel);
 	
@@ -39,5 +42,10 @@ public class BlockGAM extends Block{
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName){
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world, int type) {
+		return null;
 	}
 }
